@@ -5,4 +5,4 @@
 // @match        *www.instagram.com/accounts/onetap/*
 // ==/UserScript==
 
-window.location.replace("http://www.instagram.com");
+window.location.replace("https://www.instagram.com");
