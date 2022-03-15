@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Instagram skip "Save Your Login Info?"
+// @name         Instagram Skip "Save Your Login Info?"
 // @version      1.0
 // @description  redirect past "Save Your Login Info?"
 // @match        *www.instagram.com/accounts/onetap/*
