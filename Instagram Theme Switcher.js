@@ -15,7 +15,7 @@ if (document.URL.indexOf("/?theme=dark") < 0)
 {
     window.addEventListener('keydown', function (a) {
         if (a.which == 113) {
-            window.location.replace(currentUrl + '/?theme=dark');
+            window.location.replace(currentUrl + '?theme=dark');
         }
     })
 }
