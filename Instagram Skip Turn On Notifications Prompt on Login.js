@@ -5,7 +5,7 @@
 // @run-at       document-idle
 // ==/UserScript==
 
-if ((document.getElementsByClassName("aOOlW   HoLwm ")) >= 0)
+if ((document.getElementsByClassName("aOOlW   HoLwm ")).length > 0)
 {
     document.getElementsByClassName("aOOlW   HoLwm ")[0].click(); //autopress don't allow
 }
