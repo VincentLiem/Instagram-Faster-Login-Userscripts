@@ -6,9 +6,6 @@
 // @run-at       document-idle
 // ==/UserScript==
 
-
-// ==/UserScript==
-
 var currentUrl = window.location.href
 
 if (document.URL.indexOf("/?theme=dark") < 0)
