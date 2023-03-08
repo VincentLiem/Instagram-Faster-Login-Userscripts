@@ -1,14 +1,10 @@
 // ==UserScript==
-// @name         Instagram Feed Changer
+// @name         Instagram Auto Following Only Feed
 // @version      1.0
-// @description  Press F3 to change to following feed
-// @match        https://www.instagram.com/*
+// @description  Auto switch feed to following only
+// @match        https://www.instagram.com/
 // @run-at       document-idle
 // ==/UserScript==
 
-
-window.addEventListener('keydown', function (a) {
-    if (a.which == 114) {
-        window.location.replace('https://www.instagram.com/?variant=past_posts');
-    }
-}
+window.location.replace('https://www.instagram.com/?variant=past_posts');
+ 
