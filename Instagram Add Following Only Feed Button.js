@@ -5,32 +5,28 @@
 // @grant       GM_addStyle
 // ==/UserScript==
 
-//Check if not on login page
-if ($("*:contains('Save login info')").length = -1) {
+//Create a button in a container div.
+var zNode       = document.createElement ('div');
+zNode.innerHTML = '<button id="myButton" type="button">'
+                + 'Following Feed</button>'
+                ;
+zNode.setAttribute ('id', 'myContainer');
+document.body.appendChild (zNode);
 
+//Activate the button.
+document.getElementById ("myButton").addEventListener (
+    "click", ButtonClickAction, false
+);
 
-    //Create a button in a container div.
-    var zNode = document.createElement('div');
-    zNode.innerHTML = '<button id="myButton" type="button">'
-        + 'Following Feed</button>'
-        ;
-    zNode.setAttribute('id', 'myContainer');
-    document.body.appendChild(zNode);
+function ButtonClickAction (zEvent) {
+//Button action.
+    var zNode       = document.createElement ('p');
+    zNode.innerHTML = window.location.replace('https://www.instagram.com/?variant=past_posts');
+    document.getElementById ("myContainer").appendChild (zNode);
+}
 
-    //Activate the button.
-    document.getElementById("myButton").addEventListener(
-        "click", ButtonClickAction, false
-    );
-
-    function ButtonClickAction(zEvent) {
-        //Button action.
-        var zNode = document.createElement('p');
-        zNode.innerHTML = window.location.replace('https://www.instagram.com/?variant=past_posts');
-        document.getElementById("myContainer").appendChild(zNode);
-    }
-
-    //Style using CSS.
-    GM_addStyle(`
+//Style using CSS.
+GM_addStyle ( `
     #myContainer {
         position:               absolute;
         top:                    0;
@@ -51,5 +47,3 @@ if ($("*:contains('Save login info')").length = -1) {
         background:             white;
     }
 ` );
-
-}
