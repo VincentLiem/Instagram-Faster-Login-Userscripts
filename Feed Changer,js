@@ -1,0 +1,14 @@
+// ==UserScript==
+// @name         Instagram Feed Changer
+// @version      1.0
+// @description  Press F3 to change to following feed
+// @match        https://www.instagram.com/*
+// @run-at       document-idle
+// ==/UserScript==
+
+
+window.addEventListener('keydown', function (a) {
+    if (a.which == 114) {
+        window.location.replace('https://www.instagram.com/?variant=past_posts');
+    }
+}
