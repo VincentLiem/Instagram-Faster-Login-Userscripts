@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Add Following Only Feed Button
+// @name        Instagram Add Following Only Feed Button
 // @description Add a button to go to following only feed
 // @match       https://www.instagram.com/
 // @grant       GM_addStyle
