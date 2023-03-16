@@ -31,19 +31,15 @@ GM_addStyle ( `
         position:               absolute;
         top:                    0;
         left:                   0;
-        font-size:              20px;
-        background:             white;
-        border:                 3px outset black;
-        margin:                 5px;
+        font-size:              0px;
+        background:             transparent;
+        border:                 0px;
+        margin:                 0px;
         opacity:                0.9;
         z-index:                1100;
         padding:                0px 0px;
     }
     #myButton {
         cursor:                 pointer;
-    }
-    #myContainer p {
-        color:                  white;
-        background:             white;
     }
 ` );
