@@ -2,31 +2,44 @@
 // @name        Instagram Add Following Only Feed Button
 // @description Add a button to go to following only feed
 // @match       https://www.instagram.com/
+// @match       https://www.instagram.com/?variant=past_posts
 // @grant       GM_addStyle
 // ==/UserScript==
 
+const currentURL = window.location.href;
+
 //Create a button in a container div.
-var zNode       = document.createElement ('div');
-zNode.innerHTML = '<button id="myButton" type="button">'
-                + 'Following Feed</button>'
-                ;
-zNode.setAttribute ('id', 'myContainer');
-document.body.appendChild (zNode);
+var zNode = document.createElement('div');
+if (currentURL === 'https://www.instagram.com/?variant=past_posts') {
+    zNode.innerHTML = '<button id="myButton" type="button">'
+        + 'Home Feed</button>'
+    ;
+}
+else {
+    zNode.innerHTML = '<button id="myButton" type="button">'
+        + 'Following Feed</button>'
+        ;
+}
+    zNode.setAttribute('id', 'myContainer');
+document.body.appendChild(zNode);
 
 //Activate the button.
-document.getElementById ("myButton").addEventListener (
+document.getElementById("myButton").addEventListener(
     "click", ButtonClickAction, false
 );
 
-function ButtonClickAction (zEvent) {
-//Button action.
-    var zNode       = document.createElement ('p');
-    zNode.innerHTML = window.location.replace('https://www.instagram.com/?variant=past_posts');
-    document.getElementById ("myContainer").appendChild (zNode);
+function ButtonClickAction(zEvent) {
+    //Button action.
+    var zNode = document.createElement('p');
+    if (currentURL === 'https://www.instagram.com/?variant=past_posts') {
+        zNode.innerHTML = window.location.href = ('https://www.instagram.com/');
+    }
+    else { zNode.innerHTML = window.location.href = ('https://www.instagram.com/?variant=past_posts'); }
+    document.getElementById("myContainer").appendChild(zNode);
 }
 
 //Style using CSS.
-GM_addStyle ( `
+GM_addStyle(`
     #myContainer {
         position:               absolute;
         top:                    0;
